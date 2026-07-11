@@ -611,6 +611,23 @@
 
   <!-- ===== Main Content ===== -->
   <div class="container">
+    <!-- ===== 初回設定 ===== -->
+    <section id="setup">
+      <h2><span class="icon">⚙️</span> 初回設定（API認証）</h2>
+      <div class="alert alert-warn">
+        <span class="alert-icon">⚠️</span>
+        <div>
+          <strong>【重要】初めて使う方へ</strong><br>
+          本ツールのAI機能を使うためには、初回のみGoogleの承認作業が必要です。<br><br>
+          1. スプレッドシート上部メニューから「<strong>📄 PDF資料をAI解析</strong>」＞「<strong>⚙️ 初回API認証（最初・エラー時）</strong>」をクリック<br>
+          2. 「承認が必要です」という画面が出たら「続行」をクリック<br>
+          3. 自分のGoogleアカウントを選択<br>
+          4. 「Google が確認していません」と出たら、左下の「<strong>詳細</strong>」を押し、一番下の「<strong>CF営業メール自動化（安全ではないページ）に移動</strong>」をクリック<br>
+          5. 下までスクロールし「許可」をクリック<br>
+          6. 「✅ APIの認証が完了しました」と出れば完了です。
+        </div>
+      </div>
+    </section>
 
     <!-- ===== 作業フロー ===== -->
     <section id="workflow">
@@ -953,7 +970,7 @@
     <!-- ===== メール実例 ===== -->
     <section id="examples">
       <h2><span class="icon">✉️</span> 生成メール 実例集</h2>
-      <p style="color:var(--text-secondary); margin-bottom:8px;">以下は実際に送信されるメールの例です。<strong
+      <p style="color:var(--text-secondary); margin-bottom:8px;">以下は実際に送信されるメールの例です（初回〜フォローアップ全10通）。<strong
           style="color:var(--text-primary);">製品名：HipSeat Pro 3in1 / メーカー名：BabyComfort</strong> の場合で表示しています。</p>
       <div class="alert alert-info" style="margin-bottom:24px;">
         <span class="alert-icon">💡</span>
@@ -962,10 +979,16 @@
 
       <!-- タブUI -->
       <div class="tab-bar">
-        <button class="tab-btn active" onclick="showTab('tab1', this)">📧 初回メール</button>
-        <button class="tab-btn" onclick="showTab('tab2', this)">🔄 フォロー1</button>
-        <button class="tab-btn" onclick="showTab('tab3', this)">🔄 フォロー3</button>
-        <button class="tab-btn" onclick="showTab('tab4', this)">🏁 最終メール</button>
+        <button class="tab-btn active" onclick="showTab('tab1', this)">📧 初回</button>
+        <button class="tab-btn" onclick="showTab('tab2', this)">🔄 2通目</button>
+        <button class="tab-btn" onclick="showTab('tab3', this)">🔄 3通目</button>
+        <button class="tab-btn" onclick="showTab('tab4', this)">🔄 4通目</button>
+        <button class="tab-btn" onclick="showTab('tab5', this)">🔄 5通目</button>
+        <button class="tab-btn" onclick="showTab('tab6', this)">🔄 6通目</button>
+        <button class="tab-btn" onclick="showTab('tab7', this)">🔄 7通目</button>
+        <button class="tab-btn" onclick="showTab('tab8', this)">🔄 8通目</button>
+        <button class="tab-btn" onclick="showTab('tab9', this)">🔄 9通目</button>
+        <button class="tab-btn" onclick="showTab('tab10', this)">🏁 10通目（最終）</button>
       </div>
 
       <!-- Tab 1: 初回 -->
@@ -1107,45 +1130,273 @@
         </div>
       </div>
 
-      <!-- Tab 4: 最終 -->
+      <!-- Tab 4 -->
       <div id="tab4" class="tab-content">
         <div class="email-meta">
           <span class="email-label">件名</span>
-          <span class="email-subject">Final Note: HipSeat Pro 3in1 - Japanese Market Opportunity</span>
+          <span class="email-subject">Follow-up #4: Japanese Market Opportunity for HipSeat Pro 3in1</span>
         </div>
         <div class="email-split">
           <div class="email-col">
             <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
             <div class="email-body">Dear BabyComfort Team,
 
-              This is my final follow-up regarding the possibility of introducing <mark>HipSeat Pro 3in1</mark> to the
-              Japanese market.
+              I wanted to follow up once more regarding the opportunity to introduce <mark>HipSeat Pro 3in1</mark> to Japanese consumers.
 
-              I completely respect that this may not be the right time or fit for your company. However, if you ever
-              decide to explore Japan as a market in the future, please do not hesitate to reach out.
+              Japan has one of the largest consumer markets in the world, and products from international crowdfunding campaigns have been receiving strong interest. We believe <mark>HipSeat Pro 3in1</mark> has great potential in this market.
 
-              Thank you sincerely for your time and consideration.
+              If the timing is not ideal right now, we completely understand. Please feel free to reach out whenever you are ready to explore this opportunity.
 
               Best regards,
               Shimizu
               SelectBargainStore
-              info@selectbargainstore.com
               https://selectbargainstore.com/</div>
           </div>
           <div class="email-col">
             <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
             <div class="email-body ja">BabyComfort チームの皆様へ、
 
-              <mark>HipSeat Pro 3in1</mark> を日本市場にご紹介する可能性についての最後のフォローアップです。
+              <mark>HipSeat Pro 3in1</mark> を日本の消費者にご紹介する機会について、改めてご連絡いたします。
 
-              このタイミングや条件が貴社に合わない場合は、完全に理解しております。しかし、将来もし日本市場への展開をお考えになった際は、ぜひお気軽にご連絡ください。
+              日本は世界最大級の消費市場の一つであり、海外のクラウドファンディング発の製品への関心も非常に高まっています。<mark>HipSeat Pro 3in1</mark> にはこの市場で大きな可能性があると確信しております。
 
-              お時間とご検討をいただき、誠にありがとうございました。
+              もし今がベストなタイミングでなくても、もちろん問題ございません。ご興味を持っていただけるタイミングがあれば、いつでもお気軽にご連絡ください。
 
               敬具
               清水
               SelectBargainStore
-              info@selectbargainstore.com
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 5 -->
+      <div id="tab5" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #5: Quick Check-in - HipSeat Pro 3in1 for Japan</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              I hope I am not being a bother. I just wanted to check in one more time regarding our proposal to bring <mark>HipSeat Pro 3in1</mark> to the Japanese market.
+
+              We remain very interested and would love the chance to discuss this further at your convenience.
+
+              Best regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              ご迷惑でなければ幸いです。<mark>HipSeat Pro 3in1</mark> を日本市場へご紹介するご提案について、改めてご確認のご連絡をさせていただきました。
+
+              引き続き大変興味を持っており、ご都合の良いタイミングでさらに詳しくお話しできればと思っております。
+
+              敬具
+              清水
+              SelectBargainStore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 6 -->
+      <div id="tab6" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #6: Exploring Partnership Opportunities - HipSeat Pro 3in1</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              I hope you are doing well. I am reaching out again because we truly see potential in <mark>HipSeat Pro 3in1</mark> for the Japanese market.
+
+              We have successfully helped many international brands establish their presence in Japan through crowdfunding platforms like Makuake. Our full-service approach means you would not need to worry about localization, logistics, or customer service.
+
+              Would you be open to a brief call or email exchange to learn more?
+
+              Best regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              お元気でお過ごしでしょうか。<mark>HipSeat Pro 3in1</mark> には日本市場で本当に大きな可能性があると考え、改めてご連絡いたしました。
+
+              弊社はこれまで、Makuakeのようなクラウドファンディングプラットフォームを通じて、多くの海外ブランドの日本進出を支援してまいりました。現地化・物流・カスタマーサポートまで一貫して対応するフルサービス体制のため、貴社にご負担をおかけすることはございません。
+
+              簡単なお電話やメールでのやり取りで、詳細をご説明する機会をいただけますでしょうか。
+
+              敬具
+              清水
+              SelectBargainStore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 7 -->
+      <div id="tab7" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #7: HipSeat Pro 3in1 - A Growing Demand in Japan</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              I wanted to share that we have been seeing a growing demand in Japan for products similar to <mark>HipSeat Pro 3in1</mark>. The Japanese market is always looking for innovative and high-quality products from around the world.
+
+              If you are considering expanding internationally, Japan could be an excellent next step. We would love to help make that happen.
+
+              Please let us know if you would like to explore this further.
+
+              Best regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              <mark>HipSeat Pro 3in1</mark> のような製品への需要が、日本国内で高まっていることをお伝えしたく、ご連絡いたしました。日本市場は常に、世界中の革新的で高品質な製品を求めています。
+
+              もし海外展開をご検討中であれば、日本は素晴らしい次のステップになり得ます。ぜひその実現のお手伝いをさせていただきたいと考えております。
+
+              さらに詳しくお話しできればと思いますので、ご検討いただければ幸いです。
+
+              敬具
+              清水
+              SelectBargainStore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 8 -->
+      <div id="tab8" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #8: Partnership Reminder - HipSeat Pro 3in1</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              I understand that entering a new market is a big decision, and I appreciate your time in considering our proposal.
+
+              Just to recap: we handle everything from product listing and marketing to shipping and after-sales support in Japan. There is minimal effort required on your end.
+
+              If you have any concerns or questions, I am happy to address them.
+
+              Best regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              新しい市場への参入が大きなご決断であることは十分承知しており、ご提案をご検討いただいているお時間に感謝申し上げます。
+
+              改めての確認となりますが、弊社では商品掲載・マーケティングから配送・アフターサポートまで、日本国内での対応を一括して担当いたします。貴社側でのご負担はほとんどございません。
+
+              ご懸念やご質問がございましたら、いつでも喜んで対応させていただきます。
+
+              敬具
+              清水
+              SelectBargainStore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 9 -->
+      <div id="tab9" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #9: One More Thought - HipSeat Pro 3in1 in Japan</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              I wanted to reach out one more time. We have been closely following your product and remain confident that <mark>HipSeat Pro 3in1</mark> would perform very well in Japan.
+
+              If the timing is not right at the moment, I completely understand. Please feel free to keep our contact information for the future.
+
+              Best regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              もう一度だけご連絡させていただきました。貴社製品には継続して注目しており、<mark>HipSeat Pro 3in1</mark> は日本市場で非常に良い成果を上げられると確信しております。
+
+              もし今がタイミングとして合わなくても、もちろん問題ございません。今後のためにぜひ弊社の連絡先を残しておいていただければ幸いです。
+
+              敬具
+              清水
+              SelectBargainStore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 10: 最終 -->
+      <div id="tab10" class="tab-content">
+        <div class="email-meta">
+          <span class="email-label">件名</span>
+          <span class="email-subject">Follow-up #10 (Final): HipSeat Pro 3in1 and the Japanese Market</span>
+        </div>
+        <div class="email-split">
+          <div class="email-col">
+            <div class="email-lang-label">🇺🇸 英語（実際に送信）</div>
+            <div class="email-body">Dear BabyComfort Team,
+
+              This will be my final email regarding the partnership opportunity for <mark>HipSeat Pro 3in1</mark> in Japan.
+
+              I remain confident that your product would resonate with Japanese consumers. Should you ever wish to explore the Japanese market, please do not hesitate to reach out. Our door is always open.
+
+              Wishing you continued success.
+
+              Warm regards,
+              Shimizu
+              SelectBargainStore
+              https://selectbargainstore.com/</div>
+          </div>
+          <div class="email-col">
+            <div class="email-lang-label">🇯🇵 日本語（参考訳）</div>
+            <div class="email-body ja">BabyComfort チームの皆様へ、
+
+              <mark>HipSeat Pro 3in1</mark> の日本市場でのパートナーシップの機会について、これが最後のご連絡となります。
+
+              貴社製品は日本の消費者にも必ず受け入れられると確信しております。もし将来、日本市場への展開をお考えになることがあれば、いつでもお気軽にご連絡ください。弊社はいつでも門戸を開いております。
+
+              貴社の今後のご成功を心よりお祈り申し上げます。
+
+              敬具
+              清水
+              SelectBargainStore
               https://selectbargainstore.com/
             </div>
           </div>
