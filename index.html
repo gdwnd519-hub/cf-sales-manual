@@ -602,6 +602,8 @@
       <a href="#workflow">作業フロー</a>
       <a href="#columns">記入する列</a>
       <a href="#menu">メニュー一覧</a>
+      <a href="#research">各サイトのリサーチ</a>
+      <a href="#launchers">起動ファイル一覧</a>
       <a href="#auto">自動処理</a>
       <a href="#status">L列ステータス</a>
       <a href="#examples">メール実例</a>
@@ -807,6 +809,170 @@
           <div class="label">🔴 トリガー全削除</div>
           <div class="desc">設定されている全ての自動実行トリガーを削除します。自動送信・自動返信チェックが停止します。</div>
           <span class="tag tag-danger">停止</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 各サイトのリサーチメニュー ===== -->
+    <section id="research">
+      <h2><span class="icon">🔍</span> 各サイトのリサーチメニュー</h2>
+      <p style="color:var(--text-secondary); margin-bottom:20px;">スプレッドシート上部の<strong
+          style="color:var(--text-primary);">「🔍 Zeczecリサーチ」「🔍 FlyingVリサーチ」「🔍 wadizリサーチ」「🔍 Kickstarterリサーチ」「🔍 Indiegogoリサーチ」「🔍 Startnextリサーチ」「🔍 Pozibleリサーチ」</strong>
+        の7つは、それぞれのクラウドファンディングサイトから案件を収集するための専用メニューです。構成はどのサイトもほぼ共通です。</p>
+
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="label">▶️ リサーチ実行</div>
+          <div class="desc">クリックすると、実行すべきコマンド（PowerShellに貼り付けるコピペ用テキスト）がポップアップ表示されます。<strong
+              style="color:var(--text-primary);">このメニュー自体はコマンドを表示するだけで、収集はPC側で別途コマンドを実行して行います。</strong>サイトごとに既定の絞り込み条件（新着・終了日数・達成率など）が異なります。下の表を参照してください。</div>
+          <span class="tag tag-info">コマンド表示のみ</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">🔎 キーワード検索（条件指定）</div>
+          <div class="desc">通常のリサーチ（新着順の一覧収集）ではなく、特定のキーワードで検索して案件を集めたい場合に使います。ダイアログでキーワードや条件を指定できます。</div>
+          <span class="tag tag-info">コマンド表示のみ</span>
+        </div>
+
+        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
+          <div class="label">🆕 収集シートを初期作成</div>
+          <div class="desc">そのサイト専用の収集シートを新規作成します。<strong
+              style="color:var(--text-primary);">既存のシートがある場合は中身が消えるため、初回セットアップ時以外は使わないでください。</strong></div>
+          <span class="tag tag-danger">⚠️ データ消去</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">🏷️ 判定ドロップダウンを追加</div>
+          <div class="desc">収集シートの「判定」列に「採用候補／不採用」などを選べるドロップダウンを設定します。収集直後、まだ設定されていない場合に使います。</div>
+          <span class="tag tag-safe">安全・確認用</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">🔃 新着順に並び替え（終了日降順）</div>
+          <div class="desc">収集シートを終了日の新しい順に並び替えます。何度実行しても問題ありません。</div>
+          <span class="tag tag-safe">安全・確認用</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">🎨 URL重複をハイライト</div>
+          <div class="desc">同じ案件が重複して収集されてしまった行を色付けして見つけやすくします（Kickstarter・Indiegogo・Startnext・Pozibleのみ）。</div>
+          <span class="tag tag-safe">安全・確認用</span>
+        </div>
+
+        <div class="menu-item" style="border-color:rgba(168,85,247,0.3);">
+          <div class="label">🚀 採用候補をAI解析へ送る（1件ずつ確認）</div>
+          <div class="desc">「判定」列で「採用候補」にした案件を、1件ずつAI解析（Gemini）にかけてメーカー打診管理シートへ転記します。</div>
+          <span class="tag" style="background:rgba(168,85,247,0.15); color:#a855f7;">✨ AI 自動化</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top:28px;">📌 サイトごとの既定条件（▶️ リサーチ実行）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>サイト</th>
+              <th>既定の絞り込み条件</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Zeczec</td><td>新着・終了30日以内</td></tr>
+            <tr><td>FlyingV</td><td>新着・終了30日以内</td></tr>
+            <tr><td>wadiz</td><td>終了30日以内・達成率100%以上</td></tr>
+            <tr><td>Kickstarter</td><td>成功案件・終了30日以内</td></tr>
+            <tr><td>Indiegogo</td><td>終了30日以内・物販向けカテゴリ</td></tr>
+            <tr><td>Startnext</td><td>成功案件・終了30日以内・物販向けカテゴリ</td></tr>
+            <tr><td>Pozible</td><td>達成済み案件・終了90日以内・物販向けカテゴリ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:28px;">🗓️ しばらく使っていなかった時は「補完検索」を使う</h3>
+      <p style="color:var(--text-secondary); margin-bottom:12px;">上の「▶️ リサーチ実行」は<strong
+          style="color:var(--text-primary);">直近の新着案件だけ</strong>を対象にしています。1週間以上ツールを使っていなかった場合、この方法だと間の期間の案件を取りこぼしてしまいます。そういう時は、PC上の<strong
+          style="color:var(--text-primary);">デスクトップのバッチファイル（.bat）</strong>から「補完検索」モードを使ってください（進行中の案件＋終了後90日以内までさかのぼって収集します）。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>サイト</th>
+              <th>起動ファイル</th>
+              <th>久しぶりの時に選ぶ番号</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Zeczec</td><td>Zeczecリサーチ起動.bat</td><td>8. 補完検索</td></tr>
+            <tr><td>FlyingV</td><td>FlyingVリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+            <tr><td>wadiz</td><td>wadizリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+            <tr><td>Kickstarter</td><td>Kickstarterリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+            <tr><td>Indiegogo</td><td>Indiegogoリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+            <tr><td>Startnext</td><td>Startnextリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+            <tr><td>Pozible</td><td>Pozibleリサーチ起動.bat</td><td>2. 補完検索</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color:var(--text-secondary); margin-top:12px;">まとめて選びたい時は「<strong
+          style="color:var(--text-primary);">他サイト補完リサーチ起動.bat</strong>」を使うと、Zeczec以外の6サイトをその場で番号選択して補完検索できます。</p>
+
+      <div class="alert alert-info" style="margin-top:16px;">
+        <span class="alert-icon">💡</span>
+        <div>
+          <strong>使い分けの目安</strong><br>
+          ・数日〜1週間以上あけて再開する場合 → <strong style="color:var(--text-primary);">補完検索</strong>（前回「進行中」だった案件の最終確定金額も拾えます）<br>
+          ・今日〜明日くらいの短い間隔で追加収集したいだけの場合 → <strong style="color:var(--text-primary);">通常の「▶️ リサーチ実行」</strong>の方が効率的です（補完検索は毎回一覧を広く取り直すため、直後に繰り返すと無駄が多くbot検知のリスクも上がります）
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 起動ファイル一覧 ===== -->
+    <section id="launchers">
+      <h2><span class="icon">🖥️</span> 起動ファイル（.bat）一覧</h2>
+      <p style="color:var(--text-secondary); margin-bottom:20px;">ダブルクリックで動かすツール類は、すべて<strong
+          style="color:var(--text-primary);">プロジェクト直下の「起動」フォルダ</strong>にまとまっています（<code
+          style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px;">CF営業メール自動化\起動\</code>）。よく使うものはこのフォルダごとデスクトップやタスクバーにピン留めしておくと便利です。</p>
+
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="label">Zeczec／FlyingV／wadiz／Kickstarter／Indiegogo／Startnext／Pozible リサーチ起動.bat</div>
+          <div class="desc">各サイト1つずつのランチャー。番号選択で「通常スキャン」か「補完検索」を選べます（詳細は上の「各サイトのリサーチメニュー」参照）。</div>
+          <span class="tag tag-safe">日常的に使用</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">全プラットフォームリサーチ起動.bat</div>
+          <div class="desc">7サイト（Zeczec→FlyingV→wadiz→Kickstarter→Indiegogo→Startnext→Pozible）を通常スキャン相当の設定で順番に自動実行します。全部で30分〜1時間程度かかります。完了後はスプレッドシートの「🔗 統合ビュー」→「🔄 統合ビューを更新」を忘れずに実行してください。</div>
+          <span class="tag tag-caution">時間がかかる</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">他サイト補完リサーチ起動.bat</div>
+          <div class="desc">Zeczec以外の6サイトについて、番号選択でその場から補完検索（進行中案件＋終了後90日）を実行できます。1週間以上ぶりに再開するときに便利です。</div>
+          <span class="tag tag-caution">時間がかかる</span>
+        </div>
+
+        <div class="menu-item" style="border-color:rgba(79,143,255,0.3);">
+          <div class="label">サーバー起動.bat</div>
+          <div class="desc">「🚀 採用候補をAI解析へ送る」（1件ずつ確認・全件連続送信）を使うために必要な、ローカルのAI解析サーバー（ポート5001）を起動します。<strong
+              style="color:var(--text-primary);">このウィンドウを開いたままにしておく必要があります。</strong>閉じるとAI解析パイプラインが動かなくなります。</div>
+          <span class="tag tag-info">常時起動が必要</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="label">PDFフォルダ一括解析.bat</div>
+          <div class="desc">bot検知等でAI解析パイプラインが失敗した案件を、手動でブラウザから「名前を付けて保存」したPDFファイルと突き合わせて、まとめてGemini解析するツールです。保存先フォルダは既定で「ドキュメント\Kickstarter リサーチ」。</div>
+          <span class="tag tag-info">トラブル時に使用</span>
+        </div>
+      </div>
+
+      <div class="alert alert-warn" style="margin-top:16px;">
+        <span class="alert-icon">⚠️</span>
+        <div>
+          <strong>「サーバー起動.bat」の再起動が必要なケース</strong><br>
+          Claude（AI）にツールのコード修正を依頼した後、既に起動中の「サーバー起動.bat」のウィンドウは<strong
+              style="color:var(--text-primary);">古いコードを読み込んだまま</strong>になっています。修正を反映させるには、そのウィンドウで
+          <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px;">Ctrl+C</code>
+          を押してから、もう一度「サーバー起動.bat」を起動し直してください。
         </div>
       </div>
     </section>
