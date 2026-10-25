@@ -859,7 +859,7 @@
             <tr><td>📋 メーカー打診管理</td><td>最終行・次の入力行への移動、行の追加、M列「送信可否」の設定</td></tr>
             <tr><td>📄 PDF資料をAI解析</td><td>メーカーのPDFを解析して、F列・G列に自動入力します（PDFを複数まとめて解析できます）</td></tr>
             <tr><td>🔗 統合ビュー</td><td>各クラファンサイトの収集シートを1枚にまとめて確認します（更新・並び替え・未確認の行へ移動）</td></tr>
-            <tr><td>🔍 Zeczec / FlyingV / wadiz / Kickstarter / Indiegogo / Startnext / Pozible リサーチ</td><td>新しい案件を探す（リサーチの実行、キーワード検索、判定の記入）。使い方は、各メニューの「📖 起動batの使い方ガイド」に書いてあります</td></tr>
+            <tr><td>🔍 Zeczec / FlyingV / wadiz / Kickstarter / Indiegogo / Startnext / Pozible リサーチ</td><td>新しい案件を探す（リサーチの実行、キーワード検索、判定の記入）。使い方は、下の「各サイトのリサーチメニュー」と、各メニューの「📖 起動batの使い方ガイド」に書いてあります</td></tr>
           </tbody>
         </table>
       </div>
@@ -928,16 +928,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Zeczec</td><td>新着・終了30日以内</td></tr>
-            <tr><td>FlyingV</td><td>新着・終了30日以内</td></tr>
-            <tr><td>wadiz</td><td>終了30日以内・達成率100%以上</td></tr>
-            <tr><td>Kickstarter</td><td>成功案件・終了30日以内</td></tr>
-            <tr><td>Indiegogo</td><td>終了30日以内・物販向けカテゴリ</td></tr>
-            <tr><td>Startnext</td><td>成功案件・終了30日以内・物販向けカテゴリ</td></tr>
-            <tr><td>Pozible</td><td>達成済み案件・終了90日以内・物販向けカテゴリ</td></tr>
+            <tr><td>Zeczec</td><td>終了15日前〜終了後30日以内・NT$300,000以上</td></tr>
+            <tr><td>FlyingV</td><td>成功案件・終了15日前〜終了後30日以内・NT$300,000以上</td></tr>
+            <tr><td>wadiz</td><td>終了済み・達成率100%以上・13,500,000₩以上・終了15日前〜終了後30日以内</td></tr>
+            <tr><td>Kickstarter</td><td>成功案件・$10,000以上・終了15日前〜終了後90日以内</td></tr>
+            <tr><td>Indiegogo</td><td>約150万円以上・終了15日前〜終了後30日以内・物販向けカテゴリ</td></tr>
+            <tr><td>Startnext</td><td>約150万円以上・終了15日前〜終了後30日以内・物販向けカテゴリ（非営利は除く）</td></tr>
+            <tr><td>Pozible</td><td>達成済み・約150万円以上・終了15日前〜終了後90日以内・物販向けカテゴリ</td></tr>
           </tbody>
         </table>
       </div>
+      <p style="color:var(--text-secondary); margin-top:12px; font-size:0.85rem;">※ 終了15日前の金額・達成率は途中経過です。基準に届いていない案件は、その時点では載らず、一度載った案件の数字は後から自動では更新されません。詳しい条件と使い方は、各メニューの「📖 起動batの使い方ガイド」に書いてあります。</p>
 
       <h3 style="margin-top:28px;">🗓️ しばらく使っていなかった時は「補完検索」を使う</h3>
       <p style="color:var(--text-secondary); margin-bottom:12px;">上の「▶️ リサーチ実行」は<strong
@@ -993,7 +994,7 @@
 
         <div class="menu-item">
           <div class="label">全プラットフォームリサーチ起動.bat</div>
-          <div class="desc">7サイト（Zeczec→FlyingV→wadiz→Kickstarter→Indiegogo→Startnext→Pozible）を通常スキャン相当の設定で順番に自動実行します。全部で30分〜1時間程度かかります。完了後はスプレッドシートの「🔗 統合ビュー」→「🔄 統合ビューを更新」を忘れずに実行してください。</div>
+          <div class="desc">7サイト（Zeczec→FlyingV→wadiz→Kickstarter→Indiegogo→Startnext→Pozible）を、終了後90日以内を対象に、順番に自動実行します。久しぶりに、まとめて取りたい時向けです（普段は各サイトの起動ファイルを使います）。全部で30分〜1時間程度かかります。完了後はスプレッドシートの「🔗 統合ビュー」→「🔄 統合ビューを更新」を忘れずに実行してください。</div>
           <span class="tag tag-caution">時間がかかる</span>
         </div>
 
@@ -1012,8 +1013,8 @@
 
         <div class="menu-item">
           <div class="label">PDFフォルダ一括解析.bat</div>
-          <div class="desc">bot検知等でAI解析パイプラインが失敗した案件を、手動でブラウザから「名前を付けて保存」したPDFファイルと突き合わせて、まとめてGemini解析するツールです。保存先フォルダは既定で「ドキュメント\Kickstarter リサーチ」。</div>
-          <span class="tag tag-info">トラブル時に使用</span>
+          <div class="desc"><strong style="color:var(--text-primary);">補足の方法です。</strong>bot検知等でAI解析が失敗して「予約行」（URLだけ記録された行）ができた案件を、行番号を指定して、保存したPDFで解析します。<strong style="color:var(--text-primary);">基本は、メニュー「📄 PDF資料をAI解析」→「📤 PDFファイルをアップロード」</strong>で、保存したPDFをまとめて解析します（予約行は不要）。PDFの保存先は「ドキュメント\Kickstarter リサーチ」、ファイル名は変えません。</div>
+          <span class="tag tag-info">補足</span>
         </div>
       </div>
 
