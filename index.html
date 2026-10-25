@@ -734,12 +734,14 @@
     <section id="menu">
       <h2><span class="icon">📋</span> メニュー一覧</h2>
       <p style="color:var(--text-secondary); margin-bottom:20px;">スプレッドシート上部の <strong
-          style="color:var(--text-primary);">「📧 メール自動化」</strong> メニューから使えます。</p>
+          style="color:var(--text-primary);">「📧 メール自動化」</strong> メニューから使えます。普段あまり使わないものは、メニューの中の<strong
+          style="color:var(--text-primary);">サブメニュー（⏰ 自動実行の設定／🧰 メンテナンス）</strong>にまとめてあります。マニュアルは、上部の<strong
+          style="color:var(--text-primary);">「📖 マニュアル」</strong>メニューから開けます。</p>
 
       <div class="menu-grid">
-        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">📖 マニュアル</div>
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">📖 マニュアル（上部の「📖 マニュアル」メニュー）</div>
         <div class="menu-item">
-          <div class="label">📖 操作マニュアル</div>
+          <div class="label">📖 操作マニュアル（メール送信・全体の流れ）</div>
           <div class="desc">このページを開きます。</div>
           <span class="tag tag-info">案内</span>
         </div>
@@ -776,7 +778,7 @@
           <span class="tag tag-safe">安全・確認用</span>
         </div>
         <hr class="separator">
-        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🔄 今すぐ実行（普段は自動で動いています）</div>
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🔄 今すぐ実行（普段は1時間ごとに自動で動いています）</div>
         <div class="menu-item">
           <div class="label">🔎 返信チェック</div>
           <div class="desc">Gmailの受信箱を調べて、送った相手からの返信を探します。返信があればI列に記録し、L列を「返信あり」にして、その相手へのフォローアップを止めます。普段は1時間ごとに自動で動きます。</div>
@@ -787,6 +789,8 @@
           <div class="desc">「宛先が存在しない」などで届かなかったメールの通知を探し、恒久的に届かないアドレスの行を、M列「NG」にします（以降のフォローアップが止まります）。普段は1時間ごと、および毎朝の送信前に自動で動きます。</div>
           <span class="tag tag-caution">シートを書き換え</span>
         </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🧰 メンテナンス（📧 メール自動化 ▶ 🧰 メンテナンス。ふだんは使いません）</div>
         <div class="menu-item">
           <div class="label">🌐 商品名の事前翻訳を今すぐ実行</div>
           <div class="desc">F列の製品名が日本語の行を、英語に翻訳して、L列に記録しておきます（送信時に翻訳が失敗して止まらないよう、前もって行います）。普段は1時間ごとに自動で動きます。</div>
@@ -797,8 +801,6 @@
           <div class="desc">1通目のメールの母国語訳（メーカーの国の言葉）をあらかじめ作り、N列に記録します。1通目の本文の下に、この訳が付いて送られます。普段は1時間ごとに自動で動きます。</div>
           <span class="tag tag-caution">シートを書き換え</span>
         </div>
-        <hr class="separator">
-        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🧰 メンテナンス（ふだんは使いません）</div>
         <div class="menu-item">
           <div class="label">🧹 ステータスの重複ログを整理・短縮</div>
           <div class="desc">L列（ステータス）の翻訳ログが重複して長くなった時に、まとめて短くします。F列のセル内の改行も、スペース区切りの1行に直します。</div>
@@ -812,7 +814,7 @@
           <span class="tag tag-danger">🔴 本番送信</span>
         </div>
         <hr class="separator">
-        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">⏰ 自動実行の設定（初期設定。いま稼働中なら押す必要はありません）</div>
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">⏰ 自動実行の設定（📧 メール自動化 ▶ ⏰ 自動実行の設定。初期設定なので、いま稼働中なら押す必要はありません）</div>
         <div class="menu-item">
           <div class="label">⏰ 毎朝8時トリガー設定</div>
           <div class="desc">毎朝8時に「一括送信」を自動で実行するようにします。土日を含め、毎日実行されます。</div>
@@ -856,10 +858,10 @@
         <table>
           <thead><tr><th>メニュー</th><th>何に使うか</th></tr></thead>
           <tbody>
-            <tr><td>📋 メーカー打診管理</td><td>最終行・次の入力行への移動、行の追加、M列「送信可否」の設定</td></tr>
+            <tr><td>📖 マニュアル</td><td>この操作マニュアルと、リサーチ・PDF解析の手順（図解つき）を開きます</td></tr>
             <tr><td>📄 PDF資料をAI解析</td><td>メーカーのPDFを解析して、F列・G列に自動入力します（PDFを複数まとめて解析できます）</td></tr>
-            <tr><td>🔗 統合ビュー</td><td>各クラファンサイトの収集シートを1枚にまとめて確認します（更新・並び替え・未確認の行へ移動）</td></tr>
-            <tr><td>🔍 Zeczec / FlyingV / wadiz / Kickstarter / Indiegogo / Startnext / Pozible リサーチ</td><td>新しい案件を探す（リサーチの実行、キーワード検索、判定の記入）。使い方は、下の「各サイトのリサーチメニュー」と、各メニューの「📖 起動batの使い方ガイド」に書いてあります</td></tr>
+            <tr><td>🔗 統合ビュー</td><td>各クラファンサイトの収集シートを1枚にまとめて確認します（更新・並び替え・未確認の行へ移動）。「メーカー打診管理」シートの、最終行・次の入力行への移動、行の追加、M列「送信可否」の設定は、この中の <strong>📋 メーカー打診管理シート</strong> サブメニューにあります</td></tr>
+            <tr><td>🔍 リサーチ ▶ Zeczec / FlyingV / wadiz / Kickstarter / Indiegogo / Startnext / Pozible</td><td>新しい案件を探す（リサーチの実行、キーワード検索、判定の記入）。使い方は、下の「各サイトのリサーチメニュー」と、各メニューの「📖 起動batの使い方ガイド」に書いてあります</td></tr>
           </tbody>
         </table>
       </div>
@@ -869,8 +871,8 @@
     <section id="research">
       <h2><span class="icon">🔍</span> 各サイトのリサーチメニュー</h2>
       <p style="color:var(--text-secondary); margin-bottom:20px;">スプレッドシート上部の<strong
-          style="color:var(--text-primary);">「🔍 Zeczecリサーチ」「🔍 FlyingVリサーチ」「🔍 wadizリサーチ」「🔍 Kickstarterリサーチ」「🔍 Indiegogoリサーチ」「🔍 Startnextリサーチ」「🔍 Pozibleリサーチ」</strong>
-        の7つは、それぞれのクラウドファンディングサイトから案件を収集するための専用メニューです。構成はどのサイトもほぼ共通です。</p>
+          style="color:var(--text-primary);">「🔍 リサーチ」メニューの中の、サイトごとのサブメニュー（Zeczec／FlyingV／wadiz／Kickstarter／Indiegogo／Startnext／Pozible）</strong>
+        は、それぞれのクラウドファンディングサイトから案件を収集するための専用メニューです。構成はどのサイトもほぼ共通です。</p>
 
       <div class="menu-grid">
         <div class="menu-item">
