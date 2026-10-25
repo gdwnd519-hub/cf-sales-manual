@@ -673,7 +673,7 @@
 
       <div class="alert alert-success">
         <span class="alert-icon">✅</span>
-        <div>1社につき最大10回のフォローアップメールが、2日間隔で自動送信されます。土日を含め、365日毎朝9時に実行されます。</div>
+        <div>1社につき最大10回のフォローアップメールが、2日間隔で自動送信されます。土日を含め、365日毎朝8時に実行されます。</div>
       </div>
     </section>
 
@@ -737,79 +737,136 @@
           style="color:var(--text-primary);">「📧 メール自動化」</strong> メニューから使えます。</p>
 
       <div class="menu-grid">
-        <!-- チェック系 -->
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">📖 マニュアル</div>
+        <div class="menu-item">
+          <div class="label">📖 操作マニュアル</div>
+          <div class="desc">このページを開きます。</div>
+          <span class="tag tag-info">案内</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🔍 送信前の確認（メールは送りません）</div>
         <div class="menu-item">
           <div class="label">📋 ドライラン（送信対象を確認）</div>
-          <div class="desc">メールを送信せずに、何件が送信対象になるかポップアップで確認できます。送信前の最終チェックに使ってください。</div>
+          <div class="desc">次回の自動送信で、どの行が送信対象になるかを、送らずにシミュレーションして表示します。送信前の最終チェックに使います。表示される「次回予定日時」は目安です。</div>
           <span class="tag tag-safe">安全・確認用</span>
         </div>
-
         <div class="menu-item">
           <div class="label">🔢 SKU自動記入</div>
-          <div class="desc">A列に空きがある行に、自動でSKU番号（U001, U002...）を連番で入力します。</div>
-          <span class="tag tag-safe">安全・確認用</span>
+          <div class="desc">A列が空欄の行に、SKUの連番を自動で入れます（同じ頭文字のSKUの、最大番号の次から振ります）。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
         </div>
-
         <div class="menu-item">
           <div class="label">🏢 製品名、会社名　検出チェック</div>
-          <div class="desc">G列の内容から製品名や会社名を抽出できるかを一括チェックします。検出できない行のリストと、検出成功例をポップアップで表示します。</div>
+          <div class="desc">G列の内容から、製品名・会社名を取り出せるかを一括で調べます。取り出せない行の一覧を表示します。会社名が無い行は、メールが送られません。</div>
           <span class="tag tag-safe">安全・確認用</span>
         </div>
-
-        <div class="menu-item">
-          <div class="label">🔎 返信チェック</div>
-          <div class="desc">Gmailの受信箱を検索し、送信済みアドレスからの返信を検知します。返信があればI列に受信記録を追記し、L列に「返信あり」を記録します。完了済み行はスキップされます。</div>
-          <span class="tag tag-safe">安全・確認用</span>
-        </div>
-
-        <div class="menu-item" style="border-color:rgba(168,85,247,0.3);">
-          <div class="label">📄 PDF資料を解析して入力</div>
-          <div class="desc">メーカーから提供されたPDF資料をアップロードし、Gemini AIを使って製品名・会社名・特徴などを一瞬で抽出し、F列・G列に自動入力します。</div>
-          <span class="tag" style="background:rgba(168,85,247,0.15); color:#a855f7;">✨ AI 自動化</span>
-        </div>
-
         <div class="menu-item">
           <div class="label">📋 送信間隔でスキップ中のリスト</div>
-          <div class="desc">過去にメールを送ってから「まだ2日経過していないため、一時的に送信がブロック（休止）されている」SKUのリストと、休止理由（経過日数など）をポップアップで確認できます。</div>
+          <div class="desc">「前回の送信からまだ2日たっていない」ために、今は送られない行の一覧と、その理由（経過日数など）を表示します。</div>
           <span class="tag tag-safe">安全・確認用</span>
         </div>
-
-        <hr class="separator">
-
-        <!-- 本番送信 -->
-        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
-          <div class="label">▶️ 今すぐ一括送信</div>
-          <div class="desc">条件を満たす<strong>全行に本番メールを送信</strong>します。3〜10分のランダム間隔で1通ずつ送信されます。事前にドライランで件数を確認してから実行してください。
-          </div>
-          <span class="tag tag-danger">🔴 本番送信</span>
-        </div>
-
-        <hr class="separator">
-
-        <!-- 設定系 -->
         <div class="menu-item">
           <div class="label">📊 稼働状況を確認</div>
-          <div class="desc">現在設定されているトリガー（自動実行スケジュール）の状態をポップアップで確認できます。</div>
+          <div class="desc">今、自動実行（トリガー）が何件動いているかを表示します。「毎朝8時の送信」「1時間ごとの返信チェック・バウンスチェック・事前翻訳」が動いているかを、ここで確認します。</div>
           <span class="tag tag-safe">安全・確認用</span>
         </div>
-
         <div class="menu-item">
-          <div class="label">⏰ 毎朝9時トリガー設定</div>
-          <div class="desc">毎朝9時に自動で一括送信を実行するトリガーを設定します。一度設定すれば、土日を含めて毎日自動実行されます。</div>
+          <div class="label">📈 返信率を確認</div>
+          <div class="desc">「メールを送った件数」のうち「返信があった件数」の割合を表示します。</div>
+          <span class="tag tag-safe">安全・確認用</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🔄 今すぐ実行（普段は自動で動いています）</div>
+        <div class="menu-item">
+          <div class="label">🔎 返信チェック</div>
+          <div class="desc">Gmailの受信箱を調べて、送った相手からの返信を探します。返信があればI列に記録し、L列を「返信あり」にして、その相手へのフォローアップを止めます。普段は1時間ごとに自動で動きます。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
+        </div>
+        <div class="menu-item">
+          <div class="label">🚫 バウンスチェック（配信不可を自動NG設定）</div>
+          <div class="desc">「宛先が存在しない」などで届かなかったメールの通知を探し、恒久的に届かないアドレスの行を、M列「NG」にします（以降のフォローアップが止まります）。普段は1時間ごと、および毎朝の送信前に自動で動きます。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
+        </div>
+        <div class="menu-item">
+          <div class="label">🌐 商品名の事前翻訳を今すぐ実行</div>
+          <div class="desc">F列の製品名が日本語の行を、英語に翻訳して、L列に記録しておきます（送信時に翻訳が失敗して止まらないよう、前もって行います）。普段は1時間ごとに自動で動きます。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
+        </div>
+        <div class="menu-item">
+          <div class="label">🌐 初回メール母国語訳を今すぐ生成</div>
+          <div class="desc">1通目のメールの母国語訳（メーカーの国の言葉）をあらかじめ作り、N列に記録します。1通目の本文の下に、この訳が付いて送られます。普段は1時間ごとに自動で動きます。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🧰 メンテナンス（ふだんは使いません）</div>
+        <div class="menu-item">
+          <div class="label">🧹 ステータスの重複ログを整理・短縮</div>
+          <div class="desc">L列（ステータス）の翻訳ログが重複して長くなった時に、まとめて短くします。F列のセル内の改行も、スペース区切りの1行に直します。</div>
+          <span class="tag tag-caution">シートを書き換え</span>
+        </div>
+        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
+          <div class="label">🚫 バウンス済みメールをNG設定（手動リスト・旧方式）</div>
+          <div class="desc">2026年7月6日に、その時点で届かないと分かっていた13件のアドレスを、一度だけNGにするための古い機能です。今は「バウンスチェック」が自動で同じことをするので、<strong>使いません</strong>。</div>
+          <span class="tag tag-danger">使わない</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">📨 本番送信</div>
+        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
+          <div class="label">▶️ 今すぐ一括送信</div>
+          <div class="desc">条件を満たす行に、<strong>本番のメールを今すぐ送ります</strong>。先に返信チェック・バウンスチェックを行い、3〜15分のランダムな間隔で1通ずつ送ります（営業時間の8〜19時の外は、翌朝8時まで待ちます）。<strong>押すとすぐ始まります。確認の画面は出ません。</strong>事前にドライランで対象を確認してください。普段は、毎朝8時の自動送信に任せるので、押す必要はありません。</div>
+          <span class="tag tag-danger">🔴 本番送信</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">⏰ 自動実行の設定（初期設定。いま稼働中なら押す必要はありません）</div>
+        <div class="menu-item">
+          <div class="label">⏰ 毎朝8時トリガー設定</div>
+          <div class="desc">毎朝8時に「一括送信」を自動で実行するようにします。土日を含め、毎日実行されます。</div>
           <span class="tag tag-caution">設定変更</span>
         </div>
-
         <div class="menu-item">
           <div class="label">⏰ 返信チェック（1時間毎）設定</div>
-          <div class="desc">1時間ごとにGmailの返信を自動チェックするトリガーを設定します。返信があった相手へのフォローアップは自動停止します。</div>
+          <div class="desc">返信チェックを、1時間ごとに自動で実行するようにします。</div>
           <span class="tag tag-caution">設定変更</span>
         </div>
-
         <div class="menu-item">
-          <div class="label">🔴 トリガー全削除</div>
-          <div class="desc">設定されている全ての自動実行トリガーを削除します。自動送信・自動返信チェックが停止します。</div>
+          <div class="label">⏰ バウンスチェック（1時間毎）設定</div>
+          <div class="desc">バウンスチェックを、1時間ごとに自動で実行するようにします。</div>
+          <span class="tag tag-caution">設定変更</span>
+        </div>
+        <div class="menu-item">
+          <div class="label">⏰ 事前翻訳（1時間毎）設定</div>
+          <div class="desc">商品名の事前翻訳を、1時間ごとに自動で実行するようにします。</div>
+          <span class="tag tag-caution">設定変更</span>
+        </div>
+        <div class="menu-item">
+          <div class="label">⏰ 母国語訳事前生成（1時間毎）設定</div>
+          <div class="desc">初回メールの母国語訳の事前生成を、1時間ごとに自動で実行するようにします。</div>
+          <span class="tag tag-caution">設定変更</span>
+        </div>
+        <hr class="separator">
+        <div style="font-weight:700;margin:6px 0 0;color:var(--text-primary);">🛑 停止</div>
+        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
+          <div class="label">🛑 送信のみ停止（返信チェック・翻訳は継続）</div>
+          <div class="desc"><strong>送信だけを止めます</strong>（毎朝8時の送信を取り消します）。返信チェック・バウンスチェック・翻訳は動き続けます。問題が起きて、すぐに送信を止めたい時はこれです。再開するには「毎朝8時トリガー設定」を押します。</div>
           <span class="tag tag-danger">停止</span>
         </div>
+        <div class="menu-item" style="border-color:rgba(248,113,113,0.3);">
+          <div class="label">🛑 トリガー全削除</div>
+          <div class="desc">このツールの自動実行を<strong>すべて削除</strong>します（送信・返信チェック・バウンスチェック・翻訳、統合ビューの自動更新も含みます）。<strong>確認の画面は出ません。</strong>通常は使いません。押したら、各「…設定」を押して、必要なものを1つずつ作り直します。</div>
+          <span class="tag tag-danger">全停止</span>
+        </div>
+      </div>
+          <h3 style="margin-top:28px;">📎 ほかのメニュー</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>メニュー</th><th>何に使うか</th></tr></thead>
+          <tbody>
+            <tr><td>📋 メーカー打診管理</td><td>最終行・次の入力行への移動、行の追加、M列「送信可否」の設定</td></tr>
+            <tr><td>📄 PDF資料をAI解析</td><td>メーカーのPDFを解析して、F列・G列に自動入力します（PDFを複数まとめて解析できます）</td></tr>
+            <tr><td>🔗 統合ビュー</td><td>各クラファンサイトの収集シートを1枚にまとめて確認します（更新・並び替え・未確認の行へ移動）</td></tr>
+            <tr><td>🔍 Zeczec / FlyingV / wadiz / Kickstarter / Indiegogo / Startnext / Pozible リサーチ</td><td>新しい案件を探す（リサーチの実行、キーワード検索、判定の記入）。使い方は、各メニューの「📖 起動batの使い方ガイド」に書いてあります</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -1107,7 +1164,7 @@
       <div class="card">
         <div class="card-title">📧 1日の送信上限はありますか？</div>
         <p>Gmailの1日あたりの送信制限は<strong style="color:var(--text-primary);">500通</strong>（Google Workspace
-          の場合は2000通）です。送信間隔（3〜10分）を考慮すると、1日最大で約40〜80通程度が目安です。</p>
+          の場合は2000通）です。送信間隔（3〜15分）と営業時間（8〜19時）を考慮すると、1日最大で約40〜80通程度が目安です。</p>
       </div>
 
       <div class="card">
@@ -1124,7 +1181,7 @@
       <div class="card">
         <div class="card-title">⏰ 送信を一時停止したい場合は？</div>
         <p>メニューの <strong style="color:var(--text-primary);">「🔴 トリガー全削除」</strong>
-          で自動送信を停止できます。再開するには「毎朝9時トリガー設定」を再度実行してください。</p>
+          で自動送信を停止できます。再開するには「毎朝8時トリガー設定」を再度実行してください。</p>
       </div>
 
       <div class="card">
