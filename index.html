@@ -664,8 +664,9 @@
             <div class="flow-dot">3</div>
           </div>
           <div class="flow-content">
-            <strong>Perplexityでダブルチェック ＆ H列(Mail)を記入</strong>
-            <small>AIがOK判定を出しても、「🤖 Perplexity プロンプト生成」を使って日本で本当に未発売か最終確認し、OKなら連絡先アドレスを入力！✅
+            <strong>ChatGPTでダブルチェック ＆ H列(Mail)を記入</strong>
+            <small>AIがOK判定を出しても、PDF解析（Gemini）はPDFに書いてあることしか分かりません。ChatGPT（Web検索をオンにして使います）に、クラファンのURLを渡して「日本のAmazon・楽天などで未発売か」「日本に代理店がいないか」を最終確認し、OKなら連絡先アドレスを入力！✅
+              アドレスはメーカーのホームページに書いてあるものだけを使い、見つからない時は推測で作らず空欄にしてください。
               これで完了！あとは自動でメールが送られます。</small>
           </div>
         </div>
@@ -698,7 +699,7 @@
             </tr>
             <tr>
               <td>G列（商品の特徴）</td>
-              <td><b>PDF資料をAI解析</b>で自動入力、またはPerplexityの調査結果を貼り付け</td>
+              <td><b>PDF資料をAI解析</b>で自動入力、またはChatGPTの調査結果を貼り付け</td>
               <td style="color:var(--text-secondary);">メーカー情報、特徴、市場性の分析</td>
             </tr>
             <tr>
@@ -1035,7 +1036,7 @@
     <!-- ===== 推奨手順 ===== -->
     <section>
       <h2><span class="icon">🚀</span> 送信前の推奨チェック手順</h2>
-      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; text-align:center;">
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; text-align:center;">
         <div class="card">
           <div style="font-size:1.6rem; margin-bottom:8px;">🏢</div>
           <div style="font-weight:600; font-size:0.85rem;">会社名検出チェック</div>
@@ -1045,11 +1046,6 @@
           <div style="font-size:1.6rem; margin-bottom:8px;">📋</div>
           <div style="font-weight:600; font-size:0.85rem;">ドライラン</div>
           <div style="color:var(--text-muted); font-size:0.8rem; margin-top:4px;">送信件数を確認</div>
-        </div>
-        <div class="card">
-          <div style="font-size:1.6rem; margin-bottom:8px;">📨</div>
-          <div style="font-weight:600; font-size:0.85rem;">自分宛テスト</div>
-          <div style="color:var(--text-muted); font-size:0.8rem; margin-top:4px;">文面を確認</div>
         </div>
         <div class="card">
           <div style="font-size:1.6rem; margin-bottom:8px;">▶️</div>
@@ -1178,8 +1174,8 @@
 
       <div class="card">
         <div class="card-title">⏰ 送信を一時停止したい場合は？</div>
-        <p>メニューの <strong style="color:var(--text-primary);">「🔴 トリガー全削除」</strong>
-          で自動送信を停止できます。再開するには「毎朝8時トリガー設定」を再度実行してください。</p>
+        <p>メニューの <strong style="color:var(--text-primary);">「🛑 送信のみ停止（返信チェック・翻訳は継続）」</strong>
+          で自動送信だけを停止できます（返信チェックなどは動き続けます）。再開するには「毎朝8時トリガー設定」を再度実行してください。「🛑 トリガー全削除」は、すべての自動実行を消すので、通常は使いません。</p>
       </div>
 
       <div class="card">
@@ -1771,7 +1767,7 @@
       <!-- G列の入力例 -->
       <h3>📝 G列の入力例（実際の記入内容）</h3>
       <p style="color:var(--text-secondary); margin-bottom:12px;">
-        AIがPDFから抽出した結果、またはPerplexityで調べた内容がG列に入ります。メーカー名が含まれていれば文章形式でもOKです。</p>
+        AIがPDFから抽出した結果、またはChatGPTで調べた内容がG列に入ります。メーカー名が含まれていれば文章形式でもOKです。</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <div class="card" style="border-color:rgba(52,211,153,0.3);">
           <div class="card-title" style="color:var(--accent-green);">✅ 日本語リサーチの貼り付け例</div>
